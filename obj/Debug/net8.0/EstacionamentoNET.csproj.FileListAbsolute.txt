@@ -1,0 +1,4 @@
+C:\Users\USUARIO\Documents\DevGabriel\ProjetosGabriel\EstacionamentoNET\obj\Debug\net8.0\EstacionamentoNET.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USUARIO\Documents\DevGabriel\ProjetosGabriel\EstacionamentoNET\obj\Debug\net8.0\EstacionamentoNET.AssemblyInfoInputs.cache
+C:\Users\USUARIO\Documents\DevGabriel\ProjetosGabriel\EstacionamentoNET\obj\Debug\net8.0\EstacionamentoNET.AssemblyInfo.cs
+C:\Users\USUARIO\Documents\DevGabriel\ProjetosGabriel\EstacionamentoNET\obj\Debug\net8.0\EstacionamentoNET.csproj.CoreCompileInputs.cache
