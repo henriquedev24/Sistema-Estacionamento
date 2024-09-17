@@ -1,18 +1,14 @@
 using System;
 
-namespace Estacionamento.Models;
+namespace EstacionamentoNET.Models;
 
-    public class Estacionamento
+    public class EstacionamentoValores(decimal precoInicial, decimal precoPorHora)
 {
-    private decimal precoInicial = 0;
-    private decimal precoPorHora = 0;
+    private decimal precoInicial = precoInicial;
+    private decimal precoPorHora = precoPorHora;
+
 
     private List<string> veiculos = new List<string>();
-    public Estacionamento(decimal precoInicial, decimal precoPorHora)
-    {
-        this.precoInicial = precoInicial;
-        this.precoPorHora = precoPorHora;
-    }
 
     public void AdicionarVeiculo()
     {
@@ -20,7 +16,11 @@ namespace Estacionamento.Models;
         // *IMPLEMENTE AQUI*
         Console.WriteLine("Digite a placa do veículo para estacionar:");
         Console.ReadLine();
-        veiculos.Add(veiculos);
+        veiculos.Add("");
+        if (veiculos.Count > 0)
+        {
+            Console.WriteLine("Veículo Cadastrado");
+        }
         
     }
 
@@ -36,14 +36,10 @@ namespace Estacionamento.Models;
         {
             Console.WriteLine("Digite a quantidade de horas que o veículo permaneceu estacionado:");
 
-            // TODO: Pedir para o usuário digitar a quantidade de horas que o veículo permaneceu estacionado,
-            // TODO: Realizar o seguinte cálculo: "precoInicial + precoPorHora * horas" para a variável valorTotal                
-            // *IMPLEMENTE AQUI*
             int horas = 0;
-            decimal valorTotal = 0;
+            decimal valorTotal = precoInicial + precoPorHora * horas;
 
-            // TODO: Remover a placa digitada da lista de veículos
-            // *IMPLEMENTE AQUI*
+            veiculos.Remove(placa);
 
             Console.WriteLine($"O veículo {placa} foi removido e o preço total foi de: R$ {valorTotal}");
         }
@@ -56,11 +52,13 @@ namespace Estacionamento.Models;
     public void ListarVeiculos()
     {
         // Verifica se há veículos no estacionamento
-        if (veiculos.Any())
+        if (veiculos.Count != 0)
         {
             Console.WriteLine("Os veículos estacionados são:");
-            // TODO: Realizar um laço de repetição, exibindo os veículos estacionados
-            // *IMPLEMENTE AQUI*
+            foreach (var veiculo in veiculos)
+            {
+                Console.WriteLine(veiculo);
+            }
         }
         else
         {
