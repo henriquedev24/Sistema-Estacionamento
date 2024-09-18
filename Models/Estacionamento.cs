@@ -1,43 +1,53 @@
-using System;
 
 namespace EstacionamentoNET.Models;
 
-    public class EstacionamentoValores(decimal precoInicial, decimal precoPorHora)
+public class EstacionamentoValores(decimal precoInicial, decimal precoPorHora
+)
 {
-    private decimal precoInicial = precoInicial;
-    private decimal precoPorHora = precoPorHora;
+    private decimal precoInicial;
+    private decimal precoPorHora;
 
 
     private List<string> veiculos = new List<string>();
 
+
     public void AdicionarVeiculo()
     {
-        // TODO: Pedir para o usuário digitar uma placa (ReadLine) e adicionar na lista "veiculos"
-        // *IMPLEMENTE AQUI*
+
         Console.WriteLine("Digite a placa do veículo para estacionar:");
-        Console.ReadLine();
-        veiculos.Add("");
-        if (veiculos.Count > 0)
+        string placa = Console.ReadLine();
+        
+        if (!string.IsNullOrWhiteSpace(placa))
         {
+            veiculos.Add(placa);
             Console.WriteLine("Veículo Cadastrado");
         }
-        
+        else 
+        {
+            Console.WriteLine("Placa inválida");
+        }
+
     }
 
     public void RemoverVeiculo()
     {
         Console.WriteLine("Digite a placa do veículo para remover:");
 
-        Console.ReadLine();
-        string placa = "";
+        
+        string placa = Console.ReadLine();
 
         // Verifica se o veículo existe
         if (veiculos.Any(x => x.ToUpper() == placa.ToUpper()))
         {
             Console.WriteLine("Digite a quantidade de horas que o veículo permaneceu estacionado:");
 
-            int horas = 0;
-            decimal valorTotal = precoInicial + precoPorHora * horas;
+            int horas;
+             while (!int.TryParse(Console.ReadLine(), out horas) || horas < 0)
+            {
+                Console.WriteLine("Valor inválido. Digite um número de horas válido.");
+            }
+
+            decimal valorTotal = precoInicial + (precoPorHora * horas);
 
             veiculos.Remove(placa);
 
